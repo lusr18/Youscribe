@@ -2,6 +2,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 import os
 
 def sanitize_filename(filename):
+    # Clean up illegal file name chars from title when using as file path. 
     illegal_chars = '<>:"/\\|?*'
     for char in illegal_chars:
         filename = filename.replace(char, '')
@@ -13,7 +14,7 @@ def youtube_to_transcript(title, url):
     if '&pp' in video_id:
         video_id = video_id.split("&pp")[0]
 
-    # Acquire transcript from url
+    # Acquire transcript from url with exception catch for empty transcript
     try:
         transcript = YouTubeTranscriptApi.get_transcript(video_id,
                                             languages=['en'])
