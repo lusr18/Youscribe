@@ -1,9 +1,7 @@
 # Youscribe
----
 A python project to automate parsing with selenium and acquiring of youtube transcripts by keyphrase for usecases such as database and AI. 
 
 ## Dependencies 
----
 pip install selenium youtube_transcript_api
 
 ## Usage
